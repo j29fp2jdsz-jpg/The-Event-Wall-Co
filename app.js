@@ -13,7 +13,7 @@ enquiryForm.addEventListener('submit',async e=>{
  if(String(data.get('_honey')||'').trim())return;
  const status=document.querySelector('#form-status'),fallback=document.querySelector('#form-fallback');
  status.hidden=false;fallback.hidden=true;status.className='sending';status.textContent='Sending your enquiry…';button.disabled=true;button.textContent='Sending…';enquiryForm.setAttribute('aria-busy','true');
- const payload={name:String(data.get('name')).trim(),email:String(data.get('email')).trim(),occasion:data.get('occasion'),date:data.get('date')||'To be confirmed',venue:String(data.get('venue')).trim(),style:data.get('style'),package:data.get('package'),message:String(data.get('notes')||'').trim(),_subject:'New Event Wall Co enquiry — '+data.get('occasion'),_template:'table',_url:'https://the-event-wall-co.vercel.app/',_honey:''};
+ const payload={name:String(data.get('name')).trim(),email:String(data.get('email')).trim(),occasion:data.get('occasion'),date:data.get('date')||'To be confirmed',venue:String(data.get('venue')).trim(),style:data.get('style'),package:data.get('package'),upgrade:data.get('upgrade'),message:String(data.get('notes')||'').trim(),_subject:'New Event Wall Co enquiry — '+data.get('occasion'),_template:'table',_url:'https://the-event-wall-co.vercel.app/',_honey:''};
  const controller=new AbortController();const timer=setTimeout(()=>controller.abort(),25000);
  try{
   const response=await fetch('https://formsubmit.co/ajax/theeventwallco@gmail.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload),signal:controller.signal});
