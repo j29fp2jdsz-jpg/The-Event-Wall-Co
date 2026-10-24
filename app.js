@@ -2,6 +2,7 @@
 const box=document.querySelector('#lightbox');let opener;document.addEventListener('click',e=>{const b=e.target.closest('[data-image]');if(b){opener=b;document.querySelector('#lightbox-image').src='/assets/'+b.dataset.image;document.querySelector('#lightbox-image').alt=b.querySelector('img').alt;document.querySelector('#lightbox-caption').textContent=b.dataset.caption;box.showModal()}});document.querySelector('.close-lightbox').addEventListener('click',()=>box.close());box.addEventListener('click',e=>{if(e.target===box)box.close()});box.addEventListener('close',()=>opener?.focus());
 const menu=document.querySelector('.menu-button'),mobile=document.querySelector('#mobile-nav');menu.addEventListener('click',()=>{const open=menu.getAttribute('aria-expanded')!=='true';menu.setAttribute('aria-expanded',String(open));mobile.hidden=!open});mobile.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mobile.hidden=true;menu.setAttribute('aria-expanded','false')}));
 document.querySelectorAll('.occasion-enquire').forEach(link=>link.addEventListener('click',()=>{document.querySelector('#occasion').value=link.dataset.occasion}));
+document.querySelectorAll('.package-choice').forEach(link=>link.addEventListener('click',()=>{document.querySelector('#package').value=link.dataset.package;if(link.dataset.package==='Champagne package — £275')document.querySelector('#style').value='Champagne Wall'}));
 const dateInput=document.querySelector('input[type=date]');const now=new Date();dateInput.min=[now.getFullYear(),String(now.getMonth()+1).padStart(2,'0'),String(now.getDate()).padStart(2,'0')].join('-');
 const enquiryForm=document.querySelector('#enquiry-form');
 enquiryForm.addEventListener('submit',async e=>{
@@ -12,7 +13,7 @@ enquiryForm.addEventListener('submit',async e=>{
  if(String(data.get('_honey')||'').trim())return;
  const status=document.querySelector('#form-status'),fallback=document.querySelector('#form-fallback');
  status.hidden=false;fallback.hidden=true;status.className='sending';status.textContent='Sending your enquiry…';button.disabled=true;button.textContent='Sending…';enquiryForm.setAttribute('aria-busy','true');
- const payload={name:String(data.get('name')).trim(),email:String(data.get('email')).trim(),occasion:data.get('occasion'),date:data.get('date')||'To be confirmed',venue:String(data.get('venue')).trim(),style:data.get('style'),message:String(data.get('notes')||'').trim(),_subject:'New Event Wall Co enquiry — '+data.get('occasion'),_template:'table',_url:'https://the-event-wall-co.vercel.app/',_honey:''};
+ const payload={name:String(data.get('name')).trim(),email:String(data.get('email')).trim(),occasion:data.get('occasion'),date:data.get('date')||'To be confirmed',venue:String(data.get('venue')).trim(),style:data.get('style'),package:data.get('package'),message:String(data.get('notes')||'').trim(),_subject:'New Event Wall Co enquiry — '+data.get('occasion'),_template:'table',_url:'https://the-event-wall-co.vercel.app/',_honey:''};
  const controller=new AbortController();const timer=setTimeout(()=>controller.abort(),25000);
  try{
   const response=await fetch('https://formsubmit.co/ajax/theeventwallco@gmail.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload),signal:controller.signal});
