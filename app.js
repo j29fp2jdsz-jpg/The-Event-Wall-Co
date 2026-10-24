@@ -3,5 +3,30 @@ const box=document.querySelector('#lightbox');let opener;document.addEventListen
 const menu=document.querySelector('.menu-button'),mobile=document.querySelector('#mobile-nav');menu.addEventListener('click',()=>{const open=menu.getAttribute('aria-expanded')!=='true';menu.setAttribute('aria-expanded',String(open));mobile.hidden=!open});mobile.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mobile.hidden=true;menu.setAttribute('aria-expanded','false')}));
 document.querySelectorAll('.occasion-enquire').forEach(link=>link.addEventListener('click',()=>{document.querySelector('#occasion').value=link.dataset.occasion}));
 const dateInput=document.querySelector('input[type=date]');const now=new Date();dateInput.min=[now.getFullYear(),String(now.getMonth()+1).padStart(2,'0'),String(now.getDate()).padStart(2,'0')].join('-');
-document.querySelector('#enquiry-form').addEventListener('submit',e=>{e.preventDefault();const data=new FormData(e.currentTarget);const date=data.get('date');const formatted=date?new Date(date+'T12:00:00').toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'}):'To be confirmed';const msg=`Hi The Event Wall Co! I’m ${String(data.get('name')).trim()} and I’d love to discuss an event wall.\n\nOccasion: ${data.get('occasion')}\nDate: ${formatted}\nVenue / town: ${String(data.get('venue')).trim()}\nWall style: ${data.get('style')}\n${data.get('notes')?'\nMy ideas: '+String(data.get('notes')).trim()+'\n':''}\nCould you let me know about availability, styling and a quote?`;document.querySelector('#enquiry-message').value=msg;document.querySelector('#email-enquiry').href='mailto:theeventwallco@gmail.com?subject='+encodeURIComponent('Event wall enquiry — '+data.get('occasion'))+'&body='+encodeURIComponent(msg);document.querySelector('#message-panel').hidden=false;document.querySelector('#enquiry-message').focus();document.querySelector('#message-panel').scrollIntoView({block:'nearest',behavior:'smooth'})});
-document.querySelector('#copy-message').addEventListener('click',async()=>{const field=document.querySelector('#enquiry-message');try{await navigator.clipboard.writeText(field.value);document.querySelector('#copy-status').textContent='Copied! Paste your message into an email to theeventwallco@gmail.com.'}catch{field.focus();field.select();document.querySelector('#copy-status').textContent='Select and copy the message above, then email it to theeventwallco@gmail.com.'}});document.querySelector('#year').textContent=now.getFullYear();
+const enquiryForm=document.querySelector('#enquiry-form');
+enquiryForm.addEventListener('submit',async e=>{
+ e.preventDefault();
+ const button=enquiryForm.querySelector('button[type="submit"]');
+ if(button.disabled)return;
+ const data=new FormData(enquiryForm);
+ if(String(data.get('_honey')||'').trim())return;
+ const status=document.querySelector('#form-status'),fallback=document.querySelector('#form-fallback');
+ status.hidden=false;fallback.hidden=true;status.className='sending';status.textContent='Sending your enquiry…';button.disabled=true;button.textContent='Sending…';enquiryForm.setAttribute('aria-busy','true');
+ const payload={name:String(data.get('name')).trim(),email:String(data.get('email')).trim(),occasion:data.get('occasion'),date:data.get('date')||'To be confirmed',venue:String(data.get('venue')).trim(),style:data.get('style'),message:String(data.get('notes')||'').trim(),_subject:'New Event Wall Co enquiry — '+data.get('occasion'),_template:'table',_url:'https://the-event-wall-co.vercel.app/',_honey:''};
+ const controller=new AbortController();const timer=setTimeout(()=>controller.abort(),25000);
+ try{
+  const response=await fetch('https://formsubmit.co/ajax/theeventwallco@gmail.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload),signal:controller.signal});
+  const result=await response.json();
+  if(!response.ok||!(result.success===true||result.success==='true'))throw new Error('Delivery service did not accept the enquiry.');
+  if(/activat|confirm your email/i.test(result.message||'')){
+   status.className='error';status.textContent='Our online form is being connected. Please email us directly for now.';fallback.hidden=false;
+  }else{
+   status.className='success';status.textContent='Thank you — your enquiry has been submitted. We’ll reply to the email address you provided.';enquiryForm.reset();
+  }
+ }catch{
+  status.className='error';status.textContent='We couldn’t confirm your enquiry was sent. Please try again or email us directly.';fallback.hidden=false;
+ }finally{
+  clearTimeout(timer);button.disabled=false;button.innerHTML='Send my enquiry <span aria-hidden="true">↗︎</span>';enquiryForm.removeAttribute('aria-busy');status.focus();
+ }
+});
+document.querySelector('#year').textContent=now.getFullYear();

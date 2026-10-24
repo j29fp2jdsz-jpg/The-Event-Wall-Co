@@ -1,7 +1,9 @@
 # The Event Wall Co
 
-Responsive static website for weddings, engagements and baby showers. Deploy on Vercel with Framework Preset Other, no build command and output directory `.`.
+Static, responsive marketing website. Upload root contents to a GitHub repository and import into Vercel with Framework Preset **Other**, no build command and output directory `.`.
 
-Includes nine optimised WebP design concepts, an occasion gallery, image previews and a TikTok enquiry message builder. Enquiry details stay in the browser; no form delivery backend is configured.
+Includes nine optimised WebP concept images, occasion filters, accessible image dialogs, responsive navigation and an enquiry message builder linked to TikTok @TheEventWallCo. No enquiry data is sent to a server or retained. Add a verified email and backend before replacing this with a direct submission form.
 
-Images are AI-generated concept visualisations. Prices, final inclusions and availability are confirmed individually.
+Images are AI-generated design concepts, clearly identified on the website. Prices, availability, delivery and final package inclusions are not yet confirmed.
+
+Run locally with `python3 -m http.server 8000` from this directory.

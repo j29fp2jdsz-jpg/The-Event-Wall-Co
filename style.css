@@ -103,3 +103,9 @@ footer{font-size:11px}.copyright{font-size:10px}.message-actions{flex-wrap:wrap}
 
 .email-link{display:inline-block;margin-top:27px;font-size:clamp(14px,1.4vw,19px);line-height:1.7;color:#fffdf8;border-bottom:1px solid #9aaf91;overflow-wrap:anywhere}.enquiry .social-link{margin-top:22px}.footer-contact{grid-column:2;grid-row:2;font-size:11px;overflow-wrap:anywhere}.footer-contact a{border-bottom:1px solid var(--line)}footer .copyright{grid-column:4;grid-row:1/3}.message-actions #email-enquiry{width:auto}.message-actions #copy-message{color:var(--cream)}
 @media(max-width:760px){.email-link{font-size:16px}.footer-contact{grid-column:1/-1;grid-row:auto}footer .copyright{grid-column:2;grid-row:2}.message-actions{gap:18px}.message-actions #email-enquiry{font-size:12px}}
+
+.form-trap{position:absolute!important;left:-10000px!important;width:1px!important;height:1px!important;overflow:hidden!important}
+#form-status{padding:14px 16px;margin-top:18px;font-size:14px;line-height:1.75;border:1px solid #93a68a;background:#ffffff0c;color:#fffdf8}
+#form-status.success{border-color:#c0d5a2}#form-status.error{border-color:#e4bd9e}
+#form-fallback{font-size:12px;margin-top:12px;line-height:1.8;color:#e0e7d5}#form-fallback a,.form-help a{text-decoration:underline;text-underline-offset:3px}
+form .button:disabled{cursor:wait;opacity:.7}
