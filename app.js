@@ -17,10 +17,11 @@ enquiryForm.addEventListener('submit',async e=>{
  try{
   const response=await fetch('https://formsubmit.co/ajax/theeventwallco@gmail.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload),signal:controller.signal});
   const result=await response.json();
-  if(!response.ok||!(result.success===true||result.success==='true'))throw new Error('Delivery service did not accept the enquiry.');
+  console.info('Enquiry delivery service:',response.status,result.message||'No status message');
   if(/activat|confirm your email/i.test(result.message||'')){
    status.className='error';status.textContent='Our online form is being connected. Please email us directly for now.';fallback.hidden=false;
   }else{
+   if(!response.ok||!(result.success===true||result.success==='true'))throw new Error('Delivery service did not accept the enquiry.');
    status.className='success';status.textContent='Thank you — your enquiry has been submitted. We’ll reply to the email address you provided.';enquiryForm.reset();
   }
  }catch{
