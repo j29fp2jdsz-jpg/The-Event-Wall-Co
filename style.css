@@ -60,3 +60,30 @@ h2{font-size:45px;line-height:1.02}.eyebrow{font-size:10px;letter-spacing:.13em}
 label{font-size:12px}input,select,textarea{font-size:16px}label>span{font-size:10px}.form-help{font-size:11px}
 footer{font-size:11px}.copyright{font-size:10px}.message-actions{flex-wrap:wrap}.enquiry .button{min-height:50px}
 }
+
+/* Occasion-led collection: each event has its own permanent photo section. */
+.event-section{border-bottom:1px solid var(--line);scroll-margin-top:0}
+.event-section:nth-of-type(even){background:var(--sage);max-width:none}
+.event-intro{display:grid;grid-template-columns:1.3fr 1fr;align-items:end;gap:7%;margin-bottom:36px}
+.event-intro .eyebrow{margin-bottom:15px}.event-intro h2{font-size:clamp(48px,5vw,72px);line-height:1.05}
+.event-tagline{font-family:var(--serif);font-size:30px;line-height:1.15;margin-top:19px;letter-spacing:-.02em}
+.event-description>p{font-size:15px;line-height:1.9;color:var(--muted);max-width:420px}
+.event-description .text-link{margin-top:22px;font-size:13px}
+.occasion-photos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:25px}
+.occasion-card{min-width:0}.occasion-card .photo-button{aspect-ratio:4/3}.occasion-card .photo-button img{object-position:center}
+.occasion-card h3{font-size:32px;line-height:1.1;margin-top:21px}.occasion-card>p{font-size:13px;line-height:1.85;color:var(--muted);margin-top:12px;max-width:350px}
+.swipe-note{display:none}
+.other-events{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:7%;background:var(--sage);max-width:none}
+.other-photo .photo-button{aspect-ratio:4/3}.other-photo img{object-position:center}.other-copy h2{font-size:clamp(45px,4.5vw,65px)}
+.other-copy>p:not(.eyebrow){font-size:14px;line-height:1.9;color:var(--muted);margin-top:22px;max-width:450px}
+.other-copy .text-link{margin-top:24px}.other-copy p.occasion-footnote{font-size:11px;line-height:1.8}
+.shared-concept-note{padding:23px 6% 0;font-size:11px;color:var(--muted);max-width:1600px;margin:auto}
+@media(min-width:761px) and (max-width:1100px){header nav{gap:18px;font-size:12px}header{gap:18px}.button.small{gap:15px;font-size:12px;padding:12px}.occasion-card h3{font-size:29px}.event-tagline{font-size:27px}}
+@media(max-width:760px){
+.event-intro{display:block;margin-bottom:28px}.event-intro h2{font-size:48px;line-height:1.02}.event-intro .eyebrow{font-size:10px;margin-bottom:15px}.event-tagline{font-size:28px;margin-top:17px}
+.event-description>p{font-size:14px;line-height:1.85;margin-top:23px}.event-description .text-link{margin-top:18px;font-size:12px}
+.occasion-photos{display:flex;overflow-x:auto;gap:15px;scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:#718269 transparent;padding-bottom:15px}
+.occasion-card{flex:0 0 90%;scroll-snap-align:start}.occasion-card .photo-button{aspect-ratio:4/3}.occasion-card h3{font-size:32px;margin-top:19px}.occasion-card>p{font-size:13px;margin-top:10px}
+.swipe-note{display:block;font-size:10px;letter-spacing:.02em;color:var(--muted);margin-top:11px}.swipe-note span{margin-left:8px}
+.other-events{display:flex;flex-direction:column;gap:30px;align-items:stretch}.other-photo .photo-button{aspect-ratio:4/3}.other-copy h2{font-size:48px}.other-copy>p:not(.eyebrow){font-size:14px}.other-copy p.occasion-footnote{font-size:11px}.shared-concept-note{font-size:10px;padding:22px 6% 0}
+}
