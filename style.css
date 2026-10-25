@@ -287,3 +287,32 @@ header a.brand .brand-bottom .brand-dot{color:#d4ae78!important}
 header .menu-button{border:1px solid #bd9866!important;border-radius:999px!important;padding:11px 19px!important;font-size:13px!important;letter-spacing:.02em!important;color:#f9ecda!important;background:transparent!important;white-space:nowrap!important}
 @media(max-width:800px){header{padding-inline:5%!important;height:76px!important}header a.brand{gap:9px!important}header a.brand:before{width:48px!important;height:48px!important}header a.brand .brand-bottom{font-size:clamp(17px,4.5vw,23px)!important;letter-spacing:.025em!important}header .menu-button{padding:9px 13px!important;font-size:12px!important}}
 @media(max-width:390px){header a.brand:before{width:43px!important;height:43px!important}header a.brand .brand-bottom{font-size:16px!important}header .menu-button{padding:8px 10px!important;font-size:11px!important}}
+
+/* Mobile viewport containment and responsive hero correction. */
+html,body{width:100%;max-width:100%;overflow-x:clip}
+*,*::before,*::after{box-sizing:border-box}
+.cinematic-hero{width:100%;max-width:100%;min-width:0}
+.cinematic-content,.cinematic-intro,.cinematic-actions,.cinematic-trust{min-width:0;max-width:100%}
+.cinematic-content h1{overflow-wrap:normal;word-break:normal}
+@media(max-width:800px){
+header{width:100%!important;max-width:100%!important;display:flex!important;justify-content:space-between!important;align-items:center!important;gap:10px!important;padding:0 16px!important;overflow:visible!important}
+header a.brand{flex:0 1 auto!important;min-width:0!important;max-width:calc(100% - 90px)!important;gap:8px!important}
+header a.brand:before{flex-shrink:0!important;width:43px!important;height:43px!important}
+header a.brand .brand-bottom{font-size:clamp(15px,4.3vw,20px)!important;overflow:hidden!important;text-overflow:ellipsis!important}
+header .menu-button{display:block!important;position:relative!important;visibility:visible!important;opacity:1!important;flex:0 0 auto!important;margin:0!important;min-width:0!important;max-width:95px!important;padding:9px 11px!important;font-size:12px!important;z-index:5!important}
+.cinematic-hero{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:flex-start!important;width:100%!important;max-width:100vw!important;min-width:0!important;min-height:0!important;padding:46px 18px 30px!important;overflow:hidden!important}
+.cinematic-content{display:block!important;flex:0 1 auto!important;width:100%!important;max-width:100%!important;min-width:0!important;margin:0!important;padding:0!important}
+.cinematic-content .eyebrow{font-size:9px!important;letter-spacing:.14em!important;line-height:1.7!important;white-space:normal!important}
+.cinematic-content .eyebrow span{margin:0 5px!important}
+.cinematic-content h1{width:100%!important;max-width:100%!important;font-size:clamp(36px,9vw,58px)!important;line-height:1.12!important;letter-spacing:-.04em!important;white-space:normal!important;margin:15px auto!important}
+.cinematic-content h1 em{display:block!important;white-space:normal!important;overflow-wrap:break-word!important}
+.cinematic-intro{width:100%!important;max-width:100%!important;margin:20px auto 0!important;font-size:14px!important;line-height:1.65!important;white-space:normal!important}
+.cinematic-actions{width:100%!important;max-width:100%!important;display:flex!important;flex-direction:column!important;align-items:stretch!important;gap:14px!important;margin-top:25px!important}
+.cinematic-actions .button{display:flex!important;justify-content:center!important;align-items:center!important;width:100%!important;max-width:100%!important;min-width:0!important;padding:15px 14px!important;font-size:13px!important;text-align:center!important;white-space:normal!important}
+.cinematic-secondary{align-self:center!important}
+.cinematic-trust{gap:10px!important;font-size:10px!important}
+.cinematic-preview{width:100%!important;max-width:100%!important;min-width:0!important;grid-template-columns:repeat(3,minmax(0,1fr))!important}
+.cinematic-preview a{min-width:0!important}
+.collection-landing,.collection-tiles,.collection-tile{min-width:0;max-width:100%}
+}
+@media(max-width:380px){.cinematic-content h1{font-size:34px!important}header a.brand .brand-bottom{font-size:15px!important}}
