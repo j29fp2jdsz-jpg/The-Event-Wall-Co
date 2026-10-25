@@ -277,3 +277,13 @@ header a.brand:before{content:"";display:block;flex:none;width:66px;height:66px;
 header a.brand .brand-top{font-size:9px;letter-spacing:2px;margin-bottom:5px}
 header a.brand .brand-bottom{font-size:19px;white-space:nowrap}
 @media(max-width:800px){header a.brand{min-width:0!important;gap:8px!important}header a.brand:before{width:49px;height:49px}header a.brand .brand-bottom{font-size:16px}header a.brand .brand-top{font-size:8px}}
+
+/* Consistent logo lockup: round crest + single typographic name across screen sizes. */
+header a.brand{display:flex!important;flex-direction:row!important;align-items:center!important;gap:12px!important;min-width:0!important;text-decoration:none!important}
+header a.brand:before{width:62px!important;height:62px!important;border:1px solid #caa56c!important;box-shadow:none!important}
+header a.brand .brand-top{display:none!important}
+header a.brand .brand-bottom{font:400 25px/1 var(--serif)!important;letter-spacing:.045em!important;color:#f8f0e5!important;white-space:nowrap!important}
+header a.brand .brand-bottom .brand-dot{color:#d4ae78!important}
+header .menu-button{border:1px solid #bd9866!important;border-radius:999px!important;padding:11px 19px!important;font-size:13px!important;letter-spacing:.02em!important;color:#f9ecda!important;background:transparent!important;white-space:nowrap!important}
+@media(max-width:800px){header{padding-inline:5%!important;height:76px!important}header a.brand{gap:9px!important}header a.brand:before{width:48px!important;height:48px!important}header a.brand .brand-bottom{font-size:clamp(17px,4.5vw,23px)!important;letter-spacing:.025em!important}header .menu-button{padding:9px 13px!important;font-size:12px!important}}
+@media(max-width:390px){header a.brand:before{width:43px!important;height:43px!important}header a.brand .brand-bottom{font-size:16px!important}header .menu-button{padding:8px 10px!important;font-size:11px!important}}
