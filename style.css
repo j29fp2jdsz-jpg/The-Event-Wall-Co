@@ -67,3 +67,16 @@ h2{font-size:39px;line-height:1.2}h3{font-size:27px}.eyebrow{font-size:9px;lette
 .occasion-card.premium-design .photo-button img,
 .other-events .birthday-gallery .occasion-card.premium-design .photo-button img{width:100%;height:100%;object-fit:cover;object-position:center 42%}
 }
+
+/* Consistent 4:3 image frames: full portrait visible over matching softly blurred image, never cropped or boxed in beige. */
+.occasion-card.premium-design .photo-button,.other-events .birthday-gallery .occasion-card.premium-design .photo-button{aspect-ratio:4/3;position:relative;isolation:isolate;overflow:hidden;background:#e7e0d6}
+.occasion-card.premium-design .photo-button::before{content:'';position:absolute;inset:-18px;background-image:var(--premium-image);background-position:center;background-size:cover;filter:blur(20px) brightness(.83);z-index:-1}
+.occasion-card.premium-design .photo-button img,.other-events .birthday-gallery .occasion-card.premium-design .photo-button img{position:relative;display:block;width:100%;height:100%;object-fit:contain;object-position:center;transform:none}
+.occasion-card.premium-design .photo-button:hover img{transform:none}
+.occasion-card.premium-design .photo-button:has(img[src$="IMG_5457.jpeg"]){--premium-image:url('/IMG_5457.jpeg')}
+.occasion-card.premium-design .photo-button:has(img[src$="IMG_5458.jpeg"]){--premium-image:url('/IMG_5458.jpeg')}
+.occasion-card.premium-design .photo-button:has(img[src$="IMG_5459.jpeg"]){--premium-image:url('/IMG_5459.jpeg')}
+.occasion-card.premium-design .photo-button:has(img[src$="IMG_5460.jpeg"]){--premium-image:url('/IMG_5460.jpeg')}
+.occasion-card.premium-design .photo-button:has(img[src$="IMG_5461.jpeg"]){--premium-image:url('/IMG_5461.jpeg')}
+.occasion-card.premium-design .photo-button:has(img[src$="IMG_5462.jpeg"]){--premium-image:url('/IMG_5462.jpeg')}
+.occasion-card.premium-design .photo-button:has(img[src$="IMG_5463.jpeg"]){--premium-image:url('/IMG_5463.jpeg')}
