@@ -171,3 +171,9 @@ footer a:hover{color:#eac68c}
 .premium-gallery .occasion-card .photo-button img{display:block!important;position:static!important;inset:auto!important;width:100%!important;height:100%!important;max-width:100%!important;object-fit:contain!important;object-position:center!important;transform:none!important;transform-origin:center!important}
 .premium-gallery .occasion-card .photo-button:hover img{transform:none!important}
 @media(max-width:800px){.premium-gallery .occasion-card .photo-button img,.premium-gallery .occasion-card .photo-button:hover img{object-fit:contain!important;transform:none!important}}
+
+/* Clear, compact wall prices after retiring the old three-column package cards. */
+.classic-price-summary{margin-top:24px;padding:22px 26px;border:1px solid #c49a5970;background:#faf5eb;color:#1b2921;border-radius:5px}
+.classic-price-summary p{margin:0 0 8px;line-height:1.7}.classic-price-summary p:last-child{margin-bottom:0;font-size:13px;color:#62695f}
+.event-section .occasion-card h3 .classic-card-price{display:inline-block;margin-left:8px;font:600 16px/1.4 var(--sans);letter-spacing:0;color:#a57a3e;white-space:normal}
+@media(max-width:760px){.classic-price-summary{padding:18px}.event-section .occasion-card h3 .classic-card-price{font-size:14px}}
