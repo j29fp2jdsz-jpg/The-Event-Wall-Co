@@ -54,3 +54,16 @@ h2{font-size:39px;line-height:1.2}h3{font-size:27px}.eyebrow{font-size:9px;lette
 .occasion-card.premium-design .photo-button img,
 .other-events .birthday-gallery .occasion-card.premium-design .photo-button img{width:100%;height:auto;object-fit:unset}
 }
+
+/* Keep every occasion card the same editorial landscape size. Full portraits remain available in the enlarge viewer. */
+.occasion-card.premium-design .photo-button,
+.other-events .birthday-gallery .occasion-card.premium-design .photo-button{aspect-ratio:4/3;height:auto;overflow:hidden;background:#e4e3d9}
+.occasion-card.premium-design .photo-button img,
+.other-events .birthday-gallery .occasion-card.premium-design .photo-button img{display:block;width:100%;height:100%;max-height:none;object-fit:cover;object-position:center 42%;background:transparent;transform:none}
+.occasion-card.premium-design .photo-button:hover img{transform:scale(1.025)}
+@media(max-width:760px){
+.occasion-card.premium-design .photo-button,
+.other-events .birthday-gallery .occasion-card.premium-design .photo-button{aspect-ratio:4/3;height:auto}
+.occasion-card.premium-design .photo-button img,
+.other-events .birthday-gallery .occasion-card.premium-design .photo-button img{width:100%;height:100%;object-fit:cover;object-position:center 42%}
+}
