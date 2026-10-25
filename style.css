@@ -44,3 +44,11 @@ h2{font-size:39px;line-height:1.2}h3{font-size:27px}.eyebrow{font-size:9px;lette
 .premium-gallery .premium-enquire{display:inline-block;margin-top:18px;font-size:12px}
 .premium-collection .swipe-note{margin-top:8px}
 @media(max-width:760px){.premium-collection{padding-top:65px;padding-bottom:70px}.premium-gallery{gap:16px;scroll-padding-inline:0}.premium-gallery .occasion-card{flex:0 0 88%;scroll-snap-align:start}.premium-gallery .occasion-card h3{font-size:27px}.premium-gallery .premium-price{font-size:19px}}
+
+/* Equal-height premium gallery: each complete source image is fitted, not cropped. */
+.premium-gallery{align-items:stretch}
+.premium-gallery .occasion-card{display:flex;flex-direction:column}
+.premium-gallery .occasion-card .photo-button{height:clamp(350px,38vw,540px);aspect-ratio:auto;display:flex;align-items:center;justify-content:center;background:#eae5dc;overflow:hidden}
+.premium-gallery .occasion-card .photo-button img{display:block;width:100%;height:100%;object-fit:contain;object-position:center;max-height:none}
+.premium-gallery .occasion-card .photo-button::before{content:none}
+@media(max-width:760px){.premium-gallery .occasion-card .photo-button{height:440px}}
