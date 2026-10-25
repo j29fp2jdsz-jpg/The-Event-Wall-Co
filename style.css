@@ -230,3 +230,43 @@ header .button.small:hover{background:#f0d4a8;color:#171e17}
 .cinematic-preview a:after{content:'';position:absolute;inset:45% 0 0;background:linear-gradient(transparent,#080b08e8)}
 .cinematic-preview a span{position:absolute;z-index:1;bottom:10px;left:14px;color:#fff6e9;font:400 22px/1.2 var(--serif)}
 @media(max-width:800px){.cinematic-hero{min-height:0;padding:60px 5% 28px;background-position:58% center}.cinematic-content h1{font-size:clamp(41px,10vw,64px)}.cinematic-intro{font-size:14px}.cinematic-preview{gap:7px;margin-top:30px}.cinematic-preview a{height:110px}.cinematic-preview a span{font-size:16px;left:8px}.cinematic-trust{gap:9px;font-size:10px}.cinematic-actions{gap:15px}}
+
+/* Luxury editorial direction: remove green cast, deepen contrast, increase visual impact. */
+:root{--cream:#f4eee4;--paper:#fbf7f0;--green:#181613;--ink:#211e1a;--muted:#71685d;--gold:#d7ac70;--line:#d7c8b2;--sage:#e9e0d3}
+body{background:#f4eee4;color:#211e1a}
+header{background:#100f0d!important;color:#f8efe2!important;border-bottom:1px solid #d6ac735c!important}
+header .brand-top{color:#dfbf90!important}
+header .brand-bottom{color:#fff7ea!important}
+header nav a{color:#f8f0e5!important}
+header .button.small{background:linear-gradient(110deg,#e2b679,#f3d5a1)!important;color:#21180f!important;border:1px solid #e6bd82!important;box-shadow:0 5px 24px #0005}
+.menu-button{color:#f7e8d5;border-color:#a58966}
+#mobile-nav{background:#171411!important;color:#f7eee2!important;border-color:#c8a06c66!important}
+#mobile-nav a{border-color:#a98a6240!important}
+.cinematic-hero{background-color:#17110d!important;background-image:url('/assets/champagne-wall.webp')!important;background-position:center 48%!important;min-height:750px!important}
+.cinematic-hero .cinematic-shade{background:linear-gradient(90deg,rgba(12,9,7,.92),rgba(20,12,8,.77) 46%,rgba(16,10,7,.45)),linear-gradient(0deg,#110d0be8,transparent 58%)!important}
+.cinematic-content h1{font-size:clamp(53px,7vw,108px)!important;letter-spacing:-.052em!important;line-height:1.02!important;text-shadow:0 7px 36px #000b}
+.cinematic-content h1 em{color:#f1cf9c!important}
+.cinematic-content .eyebrow{color:#e6c28f!important}
+.cinematic-intro{color:#f9ecdb!important}
+.cinematic-preview a{border-color:#dbb37b!important;background:#20150e!important;box-shadow:0 10px 25px #0008}
+.cinematic-preview a:after{background:linear-gradient(transparent,#100b08e8)!important}
+.cinematic-preview a span{color:#fff5e7!important}
+.collection-landing{background:#181411!important;color:#f9efe0!important;border-top:1px solid #d0a46b5c!important}
+.collection-heading h2{color:#fff4e4!important;font-size:clamp(44px,5vw,72px)!important}
+.collection-heading>p:last-child{color:#cbbdab!important}
+.collection-landing>.eyebrow,.collection-heading .eyebrow{color:#e2b67c!important}
+.collection-tile{background:#221b16!important;border:1px solid #bb8e5799!important;border-radius:3px!important;box-shadow:0 16px 40px #0007!important}
+.collection-tile:hover{border-color:#f2cb90!important;box-shadow:0 22px 50px #0009!important}
+.collection-tile:after{background:linear-gradient(180deg,#0b09080a 15%,#130d0b66 58%,#0c0908f5 100%)!important}
+.tile-overlay small{color:#edc48d!important}
+.tile-overlay strong{color:#fff9ee!important}
+.tile-overlay>span{color:#f0dcc2!important}
+.collection-discount{color:#e4d0b6!important}
+.collection-page-heading{background:#17120f!important;color:#fff4e6!important}
+.collection-page-heading h1{color:#fff5e6!important}
+.collection-page-heading>p{color:#e4d0b6!important}
+.collection-page-heading>a{color:#e4b67e!important}
+.collection-bottom{background:#f4eee4!important}
+.button:not(header .button):hover{filter:brightness(1.08)}
+@media(min-width:900px){.collection-tile{height:465px}.cinematic-preview a{height:185px}.cinematic-hero{padding-top:100px!important;padding-bottom:55px!important}}
+@media(max-width:800px){.cinematic-hero{min-height:0!important;background-position:58% center!important}.cinematic-content h1{font-size:clamp(43px,10vw,65px)!important}.collection-landing{padding-top:52px!important}.collection-tile{height:355px!important}}
