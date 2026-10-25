@@ -27,3 +27,17 @@ h2{font-size:39px;line-height:1.2}h3{font-size:27px}.eyebrow{font-size:9px;lette
 
 /* Premium designs sit alongside the original occasion designs */
 .premium-design{position:relative}.premium-design h3{display:flex;align-items:baseline;justify-content:space-between;gap:12px}.premium-price{font-family:inherit;font-size:17px;color:#315443;white-space:nowrap}.premium-design .text-link{display:inline-block;margin-top:14px;font-size:11px}.celebration-premium{grid-column:1/-1;max-width:560px;margin:30px auto 0;width:100%}.premium-design .photo-button img{object-fit:cover}@media(max-width:760px){.celebration-premium{margin:25px 0 0;max-width:100%}}
+
+/* Photo audit: show the full original designs rather than cropping portrait uploads. */
+.occasion-card.premium-design .photo-button{background:#ebe7df;aspect-ratio:4/3}
+.occasion-card.premium-design .photo-button img{object-fit:contain;object-position:center;transform:none}
+.occasion-card.premium-design .photo-button:hover img{transform:none}
+/* Birthday designs now share the same horizontal gallery as the other occasions. */
+.other-events .birthday-gallery{grid-column:1/-1;width:100%;margin-top:18px;grid-template-columns:repeat(2,minmax(0,1fr));max-width:1000px;margin-left:auto;margin-right:auto}
+.other-events .birthday-gallery .occasion-card{min-width:0}
+.other-events .birthday-gallery .photo-button{aspect-ratio:4/3}
+.other-events .birthday-gallery .photo-button img{object-fit:contain;background:#ebe7df}
+.other-events .birthday-gallery .photo-button:hover img{transform:none}
+.other-events .birthday-gallery .standard-price{font-size:17px;color:#315443;margin-left:12px}
+.other-events .swipe-note{grid-column:1/-1}
+@media(max-width:760px){.other-events .birthday-gallery{display:flex;gap:15px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:thin;padding-bottom:14px;max-width:100%;margin:0}.other-events .birthday-gallery .occasion-card{flex:0 0 91%;scroll-snap-align:start}.other-events .swipe-note{display:block}}
