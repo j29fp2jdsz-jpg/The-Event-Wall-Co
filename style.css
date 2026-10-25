@@ -95,3 +95,73 @@ header{background:#17211e;color:#f9f2e6;border-bottom:1px solid #b28a4e55}.brand
 .premium-gallery .zoom{border-color:#e7c789;color:#fff}
 @media(max-width:800px){.premium-collection{padding:68px 6% 78px}.premium-collection .event-intro{display:block;margin-bottom:28px}.premium-collection .event-intro h2{font-size:clamp(43px,11vw,66px)}.premium-collection .event-description{margin-top:25px}.premium-gallery{gap:14px;margin-right:-6vw;padding-right:6vw;scroll-padding-inline:0}.premium-gallery .occasion-card{flex:0 0 min(82vw,370px)}.premium-gallery .occasion-card .photo-button{height:clamp(330px,105vw,450px)}.premium-gallery .occasion-card h3{font-size:25px}.premium-gallery .premium-price{font-size:22px}}
 @media(prefers-reduced-motion:reduce){.premium-gallery .occasion-card .photo-button img{transition:none}}
+
+/* SITE-WIDE LUXURY ART DIRECTION — cohesive editorial treatment */
+:root{--cream:#f4f0e7;--paper:#fcf8f0;--green:#14201a;--ink:#1b2921;--muted:#697068;--gold:#c49a59;--line:#d8cbb6;--sage:#eee9dd}
+body{background:#f4f0e7;color:#1b2921}
+header{height:90px;position:relative;z-index:12;background:#111a15;color:#faf5ea;border-bottom:1px solid #c49a595c;padding:0 5%}
+header .brand-top{color:#e5c88d;letter-spacing:.32em}
+header .brand-bottom{font-size:30px;letter-spacing:.045em}
+header nav{gap:clamp(12px,2vw,30px);align-items:center}
+header nav a{font-family:var(--serif);font-size:15px;letter-spacing:0}
+header .button.small{background:linear-gradient(105deg,#c79954,#f0cb86);color:#171d17;border-color:#e3bd79;border-radius:40px;min-width:172px;justify-content:center}
+header .button.small:hover{background:#f0d49d}
+#mobile-nav{background:#151e19;color:#f7efdf;border-bottom:1px solid #c49a5960}
+#mobile-nav a{border-color:#ffffff21}
+.hero{max-width:none;min-height:660px;position:relative;isolation:isolate;overflow:hidden;grid-template-columns:minmax(0,1.03fr) minmax(0,.97fr);padding:75px max(5%,calc((100vw - 1440px)/2)) 85px;gap:6%;background:#121b15;color:#fdf5e9}
+.hero::before{content:"";position:absolute;z-index:-2;inset:0;background:linear-gradient(90deg,#0b110df2 0%,#111912df 52%,#0d130e75 100%),url('/IMG_5458.jpeg') center/cover no-repeat;filter:saturate(.8)}
+.hero::after{content:"";position:absolute;z-index:-1;inset:0;background:radial-gradient(circle at 72% 40%,#b17d3835,transparent 48%)}
+.hero h1{font-size:clamp(55px,5.9vw,92px);line-height:1.04;letter-spacing:-.045em;color:#fffaf0}
+.hero h1 em{color:#e6bd79}
+.hero .eyebrow{color:#e9c37d;letter-spacing:.23em}
+.hero .intro{color:#eee3d1;font-size:14px}
+.hero .intro-lead{color:#fff7e8;font-family:var(--serif);font-size:clamp(20px,2vw,29px);line-height:1.3}
+.hero .hero-location{color:#d5c6ad}
+.hero .button{border-radius:40px;background:linear-gradient(105deg,#c79954,#f0cb86);border-color:#e4c07e;color:#1b201a;padding:17px 28px}
+.hero .text-link{color:#f5e7cb;border-color:#d5af73}
+.hero-picture{height:min(590px,49vw);min-height:440px;border:1px solid #c69d5d;border-radius:6px;padding:6px;box-shadow:0 20px 70px #0008}
+.hero-picture>img{border-radius:3px;object-position:center}
+.hero-stamp{background:#faf1df;color:#263429;border-color:#c69d5d;outline-color:#faf1df}
+.ribbon{background:#101713;color:#e9dcc7;border-block:1px solid #b8905070}
+.occasion-jumps{background:#1a261e;color:#f8f0e1;border-bottom:1px solid #c49a5966}
+.occasion-jumps>span{color:#dcb67b}
+.occasion-jumps a:hover{color:#e7bf7c}
+.section{max-width:none;padding:clamp(65px,7vw,115px) max(5%,calc((100vw - 1440px)/2))}
+.event-intro h2,.pricing-heading h2,.details h2{font-size:clamp(44px,4.6vw,74px);line-height:1.08}
+.event-intro .eyebrow,.pricing .eyebrow,.details .eyebrow{color:#b98b49;letter-spacing:.2em}
+.event-tagline em,.pricing-heading em,.details em{color:#ad834a}
+.event-section{border-bottom:1px solid #c49a5938}
+#weddings,#engagement-parties,#other-celebrations{background:#f8f3ea}
+#baby-showers{background:#eae4d8}
+.occasion-card{border-radius:5px;overflow:hidden}
+.occasion-card .photo-button{border-radius:4px;overflow:hidden}
+.occasion-card .photo-button img{object-fit:cover}
+.occasion-card h3{letter-spacing:-.035em}
+.occasion-card .text-link{color:#8c6538;border-color:#b99257}
+#signature-collection{background:linear-gradient(115deg,#111a15,#263027);padding-top:95px;padding-bottom:95px}
+#signature-collection .event-intro h2{color:#fff6e8}
+#signature-collection .event-description>p{color:#e9e0d1}
+#signature-collection .signature-card{background:#f9f3e8;color:#1d2a20;border:1px solid #b8905060;border-radius:5px;box-shadow:0 15px 38px #0005}
+#signature-collection .signature-card h3{color:#19241d}
+#signature-collection .signature-card .photo-button{border-radius:0}
+#signature-collection .signature-card .occasion-enquire{color:#74512a}
+.pricing{background:#eae1d1}
+.price-card{background:#fcf8f0;border:1px solid #c4a67575;box-shadow:0 12px 30px #3a281018}
+.price-card.featured{border-color:#a47d42}
+.price-card .button,.champagne-package .button{background:#1b2b22;color:#fff6e8;border-color:#1b2b22}
+.champagne-package{background:#fcf8f0;border:1px solid #c4a67575}
+.details{background:#f7f2e9}
+#enquire{background:#1a261e;color:#fff6e9}
+#enquire .eyebrow{color:#e6bd79}
+#enquire h2,#enquire h3{color:#fff7e9}
+#enquire p{color:#e2d8c7}
+#enquire form{background:#faf5eb;color:#263128;border:1px solid #c4a67575}
+#enquire form p,#enquire form label{color:#263128}
+#enquire .button{background:#c79d5d;color:#172018;border-color:#c79d5d}
+footer{background:#101914;color:#f8f0e3;border-top:1px solid #b88c4d70}
+footer a:hover{color:#eac68c}
+.mobile-enquire{background:#faf4e9;border-top:1px solid #b88c4d80}
+.mobile-enquire .button{background:#1a2b22;color:#f9f2e5}
+@media(max-width:1050px){header nav{gap:12px}header nav a{font-size:12px}}
+@media(max-width:800px){header{height:76px;padding:0 6%}header .brand-bottom{font-size:25px}.hero{display:flex;flex-direction:column;padding:65px 6% 68px;gap:30px;min-height:0}.hero h1{font-size:clamp(49px,10.6vw,74px)}.hero-picture{width:100%;height:460px;min-height:0;max-height:72vh}.hero-stamp{width:105px;height:105px;left:8px;bottom:30px;font-size:15px}.hero-stamp span{font-size:5px;margin:7px 0}.section{padding:65px 6%}.occasion-jumps{justify-content:flex-start;overflow-x:auto;white-space:nowrap}.ribbon{gap:15px;flex-wrap:wrap}.premium-collection{padding:68px 6% 78px!important}#signature-collection{padding:70px 6%}}
+@media(max-width:480px){.hero-picture{height:370px}.hero h1{font-size:clamp(43px,11vw,58px)}.hero .hero-actions{gap:15px}.hero .button{width:100%}.hero-stamp{display:none}}
