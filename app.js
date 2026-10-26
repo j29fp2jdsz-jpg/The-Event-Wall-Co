@@ -5,9 +5,27 @@ document.querySelectorAll('.occasion-enquire').forEach(link=>link.addEventListen
 document.querySelectorAll('.package-choice').forEach(link=>link.addEventListener('click',()=>{if(!document.querySelector('#package'))return;document.querySelector('#package').value=link.dataset.package;if(link.dataset.package==='Champagne package — £275')document.querySelector('#style').value='Champagne Wall'}));
 document.querySelectorAll('.premium-enquire').forEach(link=>link.addEventListener('click',()=>{if(!document.querySelector('#package'))return;document.querySelector('#package').value='Premium design — £375 per wall';document.querySelector('#style').value=link.dataset.design;const occ=document.querySelector('#occasion');occ.value=Array.from(occ.options).some(o=>o.value===link.dataset.occasion)?link.dataset.occasion:'Something else';document.querySelector('textarea[name=notes]').value='Premium design: '+link.dataset.design;}));
 const dateInput=document.querySelector('input[type=date]');const now=new Date();if(dateInput)dateInput.min=[now.getFullYear(),String(now.getMonth()+1).padStart(2,'0'),String(now.getDate()).padStart(2,'0')].join('-');
+const halloweenPackage='Halloween signature wall — 2027 onwards — £1,250 including delivery & installation';
+const packageSelect=document.querySelector('#package');
+function updateHalloweenAvailability(){
+ if(!dateInput||!packageSelect)return;
+ const halloween=packageSelect.value===halloweenPackage;
+ dateInput.min=halloween?'2027-01-01':[now.getFullYear(),String(now.getMonth()+1).padStart(2,'0'),String(now.getDate()).padStart(2,'0')].join('-');
+ dateInput.setCustomValidity(halloween&&dateInput.value&&dateInput.value<'2027-01-01'?'This Halloween design is available for events from 1 January 2027.':'');
+}
+packageSelect?.addEventListener('change',updateHalloweenAvailability);
+dateInput?.addEventListener('input',updateHalloweenAvailability);
+if(packageSelect&&new URLSearchParams(location.search).get('design')==='halloween'){
+ packageSelect.value=halloweenPackage;
+ document.querySelector('#style').value='Signature themed wall';
+ document.querySelector('textarea[name=notes]').value='Halloween signature wall enquiry for 2027 onwards';
+ updateHalloweenAvailability();
+}
 const enquiryForm=document.querySelector('#enquiry-form');
 if(enquiryForm)enquiryForm.addEventListener('submit',async e=>{
  e.preventDefault();
+ updateHalloweenAvailability();
+ if(!enquiryForm.reportValidity())return;
  const button=enquiryForm.querySelector('button[type="submit"]');
  if(button.disabled)return;
  const data=new FormData(enquiryForm);
