@@ -345,3 +345,8 @@ header .menu-button::after{content:'☰';font-size:19px!important;line-height:1!
 #signature-collection .summer-tropical-card .photo-button{background:#261d16!important}
 #signature-collection .summer-tropical-card .photo-button img{object-fit:contain!important;object-position:center!important;transform:none!important}
 #signature-collection .summer-tropical-card .photo-button:hover img{transform:none!important}
+
+/* Spring/Easter Signature artwork: retain entire design and avoid crop/zoom. */
+#signature-collection .spring-easter-card .photo-button{background:#241d17!important}
+#signature-collection .spring-easter-card .photo-button img{object-fit:contain!important;object-position:center!important;transform:none!important}
+#signature-collection .spring-easter-card .photo-button:hover img{transform:none!important}
