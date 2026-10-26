@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://the-event-wall-co.vercel.app/sitemap.xml
