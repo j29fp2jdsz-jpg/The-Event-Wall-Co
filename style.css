@@ -328,3 +328,9 @@ header .menu-button{font-size:0!important;width:42px!important;height:42px!impor
 header .menu-button::after{content:'☰';font-size:19px!important;line-height:1!important;color:#f9ecda!important}
 }
 @media(max-width:365px){header a.brand:before{width:34px!important;height:34px!important}header a.brand .brand-bottom{font-size:11px!important}}
+
+/* Premium homepage preview: display the whole backdrop instead of cropping it. */
+.collection-tile.premium-home-tile{background:#100f11}
+.collection-tile.premium-home-tile img{object-fit:contain!important;object-position:center center!important;transform:none!important}
+.collection-tile.premium-home-tile:hover img{transform:none!important}
+.collection-tile.premium-home-tile::after{background:linear-gradient(to bottom,transparent 35%,rgba(7,8,9,.28) 58%,rgba(7,8,9,.92) 100%)}
