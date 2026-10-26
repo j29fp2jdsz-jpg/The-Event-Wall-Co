@@ -340,3 +340,8 @@ header .menu-button::after{content:'☰';font-size:19px!important;line-height:1!
 .cinematic-preview a:hover img{transform:none!important}
 .cinematic-preview a{background:#18120f!important}
 .cinematic-preview a:after{background:linear-gradient(to bottom,transparent 35%,rgba(16,11,8,.15) 56%,rgba(16,11,8,.88) 100%)!important}
+
+/* Summer/Tropical signature: reveal more of the original composition without cropping. */
+#signature-collection .summer-tropical-card .photo-button{background:#261d16!important}
+#signature-collection .summer-tropical-card .photo-button img{object-fit:contain!important;object-position:center!important;transform:none!important}
+#signature-collection .summer-tropical-card .photo-button:hover img{transform:none!important}
