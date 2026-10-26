@@ -334,3 +334,9 @@ header .menu-button::after{content:'☰';font-size:19px!important;line-height:1!
 .collection-tile.premium-home-tile img{object-fit:contain!important;object-position:center center!important;transform:none!important}
 .collection-tile.premium-home-tile:hover img{transform:none!important}
 .collection-tile.premium-home-tile::after{background:linear-gradient(to bottom,transparent 35%,rgba(7,8,9,.28) 58%,rgba(7,8,9,.92) 100%)}
+
+/* Show complete Signature and Premium artwork in homepage preview cards. */
+.cinematic-preview img{object-fit:contain!important;object-position:center!important;transform:none!important}
+.cinematic-preview a:hover img{transform:none!important}
+.cinematic-preview a{background:#18120f!important}
+.cinematic-preview a:after{background:linear-gradient(to bottom,transparent 35%,rgba(16,11,8,.15) 56%,rgba(16,11,8,.88) 100%)!important}
